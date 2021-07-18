@@ -13,11 +13,11 @@ phases:
     commands:
     - echo Build completed on `date`
     - mvn package
-    - mv target/number-service-0.0.1.jar number-service-0.0.1.jar
+    - mv target/number-service-cicd-0.0.1.jar number-service-cicd-0.0.1.jar
     - echo Buid package completion
 artifacts:
   files:
-    - number-service-0.0.1.jar
+    - number-service-cicd-0.0.1.jar
     - .ebextensions/**/*
 
 
