@@ -43,7 +43,7 @@ public class NumberServiceController {
 	 * @throws Exception
 	 * @author ankitarambole
 	 */
-	@ApiOperation(value = "Returns the list of numbers present in the text document with its position details", response = List.class)
+	@ApiOperation(value = "Returns the list of numbers present in the text document with its position details")
 	@PostMapping(value = Utility.SEARCH_NUM_POST_MAPPING, consumes = "multipart/form-data")
 	public ResponseEntity<List<NumberServiceModel>> getNumberSerachDetails(
 			@RequestPart(Utility.SEARCH_NUM_REQUEST_PARAM_FILE) @ApiParam(value = "File", required = true) MultipartFile file)
