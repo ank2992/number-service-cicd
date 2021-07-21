@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
@@ -24,7 +25,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
 @RestController
-@RequestMapping(Utility.SEARCH_NUM_REQUEST_MAPPING)
+//@RequestMapping(Utility.SEARCH_NUM_REQUEST_MAPPING)
 @Api(value = "Number Service", description = "Operations performed to search the Numbers present in text document")
 public class NumberServiceController {
 
@@ -74,6 +75,11 @@ public class NumberServiceController {
 
 		}
 
+	}
+
+	@GetMapping("/")
+	public ResponseEntity<String> healthCheck() {
+		return new ResponseEntity<>("I am Healthy", HttpStatus.OK);
 	}
 
 }
